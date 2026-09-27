@@ -63,12 +63,11 @@ class GamesReview(models.Model):
     name = models.CharField(max_length= 200, verbose_name = "название")
     text = models. TextField( verbose_name = "OueHka")
     raiting = models.IntegerField(choices=GAMES_RAITING, verbose_name = "PenTnHr" )
-    games = models.ForeignKey(Games,on_delete = models. CASCADE,related_name = 'review')
     created_at = models.DateTimeField(auto_now_add = True)
 
     game=models.ForeignKey(
         Games,
-        on_delete=models.CASCADE,
+        on_delete=models.CASCADE,   
         related_name='review'
         )
 
